@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>China Entropy </title>
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- jQuery -->
+		<script src="js/jquery-2.1.1.js"></script>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="apple-touch-icon-precomposed.png">
+
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Superfish -->
+		<link rel="stylesheet" href="css/superfish.css">
+
+		<link href="css/responsive.css" rel="stylesheet">
+		<!--cancel
+		<link rel="stylesheet" type="text/css" href="src/material-scrolltop.css">--!>
+		<!-- Theme Style -->
+		<link href="css/menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/ST.css">	
+		<link rel="stylesheet" type="text/css" href="src/material-scrolltop.css">
+		<link href="css/jquery-accordion-menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/hover-min.css">
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+			
+			body {
+				background: #FAFAFA;
+			}
+			
+			.content {
+				width: 260px;
+				margin: 100px auto;
+			}
+			
+			.filterinput {
+				background-color: rgba(249, 244, 244, 0);
+				border-radius: 15px;
+				width: 90%;
+				height: 30px;
+				border: thin solid #FFF;
+				text-indent: 0.5em;
+				font-weight: bold;
+				color: #FFF;
+			}
+			
+			#demo-list a {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 100%;
+			}
+			.table-of-contents a.active {
+				border-bottom: none !important;
+				z-index: 5;
+				background: #fff !important;
+				color: #0099ff;
+				border-left: 6px solid #0099ff;
+				border-bottom: none !important;
+				-webkit-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-moz-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-ms-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-o-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+			}
+		</style>
+		<script>
+		 jQuery(document).ready(function () {
+		jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+	
+		});
+
+		$(function(){
+		//滚动监听
+		$('.scrollspy').scrollSpy();
+			//顶部导航切换
+		$("#demo-list li").click(function(){
+		$("#demo-list li.active").removeClass("active");
+		$(this).addClass("active");
+		});
+		$('.button-collapse').sideNav({
+     	menuWidth: 300, // Default is 240
+      	edge: 'right', // Choose the horizontal origin
+      	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   		});
+   		window.onscroll = function(){ 
+   		var t = document.documentElement.scrollTop || document.body.scrollTop;  
+	    if( t >= 300 ) { 
+	       $('.menuFix').css({"position":"fixed","top":"350px"});
+	    } else { 
+	        $('.menuFix').css({"position":"absolute","top":"600px"});
+	    }} 
+		});
+	  function showView(){
+	  	$('.button-collapse').sideNav('show');
+	  }
+	  function showActive(PartName){
+	  	//$("#"+PartName).parent().addClass('active');
+	  	//$("#"+PartName).click();
+	  }
+	  function smallScroll(PartName){
+	  	$(".side-nav li a").removeClass('slideSub');
+	  	if(PartName=='PublicTransportNet'){
+	  		$(".side-nav li a:eq(1)").addClass('slideSub');
+	  	}else if(PartName=='SpecialCar'){
+	  		$(".side-nav li a:eq(2)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='SmartLight'){
+	  		$(".side-nav li a:eq(3)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='TrafficEmergence'){
+	  		$(".side-nav li a:eq(4)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='SpeedCatch'){
+	  		$(".side-nav li a:eq(5)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='GeomagnetSense'){
+	  		$(".side-nav li a:eq(6)").addClass('slideSub');
+	  	}
+	  	var scroll_offset = $("#"+PartName).offset();  //得到pos这个div层的offset，包含两个值，top和left
+ 		 $("body,html").animate({
+   		scrollTop:scroll_offset.top  //让body的scrollTop等于pos的top，就实现了滚动
+  		},0);
+		}
+	</script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+			<script src="js/modernizr-2.6.2.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<!-- START #fh5co-header -->
+
+		<header id="fh5co-header-section" role="header" class="service-header">
+			<div class="container">
+
+				<!-- START #fh5co-logo -->
+				<h1 id="fh5co-logo" class="pull-left header-logo"><div><img id="Home-logo" src="images/logo.png"/></div></h1>
+
+				<!-- START #fh5co-menu-wrap -->
+				<nav id="fh5co-menu-wrap" role="navigation">
+					<ul class="sf-menu" id="fh5co-primary-menu">
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						<li class="active">
+							<a href="#" class="fh5co-sub-ddown">方案</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html" class="fh5co-sub-ddown">冬奥会</a>
+									<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html">环保冬奥</a></li>
+								<li><a href="OlySafetyTest.html">安全冬奥</a></li>
+								<li><a href="OlyTechTest.html">科技冬奥</a></li>
+								<li><a href="OlyTravelTest.html">畅通冬奥</a></li>
+								</ul>
+								</li>
+								<li><a href="CityTest.html">城市交通</a></li>
+								<li><a href="RoadTest.html">高速公路</a></li>
+								<li><a href="OilTest.html">智慧油田</a></li>
+								<li><a href="RelicTest.html">文物保护</a></li>
+								<li><a href="FireTest.html">智慧消防</a></li>
+								<li><a href="PowerTest.html">能源互联网</a></li>
+							</ul>
+						</li>
+						<li><a href="ProductTest.html">产品</a></li>
+						<li><a href="service.html">服务</a></li>
+						<li>
+							<a href="company.html" class="fh5co-sub-ddown">公司</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="company.html">公司简介</a></li>
+								<li><a href="NewFounder.html">创始人寄语</a></li>
+								<li><a href="NewMission.html">使命与愿景</a></li>
+								<li><a href="NewContactUs.html">联系我们</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<main>
+			<div style="position: absolute;width:100%;top: 200px;z-index: 500px;">
+				<div class="container">
+					<div class="row">
+						<span style="color: #FFF; font-size: 40px;font-weight: 600;">城市交通</span>
+						<h3 style="color: #fff;font-weight: 600;">————智能交通铺就智慧城市之路！<br><br></h3>
+						<h4 style="width:400px;color:#fff;text-shadow: 2px 2px 5px #000;">汉熵通信智能交通解决方案让人、车、路和城市感知互动、和谐共处！</h4>
+
+					</div>
+				</div>
+			</div>
+			<div class="parallax-container">
+				<div class="parallax"><img src="images/Banners/Banner_Traffic_Luis.jpg"></div>
+				<h4 style="width:400px;color:#fff;text-shadow: 2px 2px 5px #000;">汉熵通信智能交通解决方案让人、车、路和城市感知互动、和谐共处！</h4>
+
+			</div>
+			<div id="top2">
+				<div class="container">
+					<h6 id="welcome1" class="pull-left"><a>欢迎来到汉熵通信</a></h6>
+					<ul class="sf-menu pull-right" id="fh5co-primary-menu2">
+						<li><a href="join_us_social.html" style="color: #fff;font-size: 12px;">加入我们</a>
+						</li>
+						<li id="englishVersion"><a href="#" style="color: #fff;font-size: 12px;">English</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- End the top bar -->
+			<div id="para1" style="width:88%;height:auto !important;height:300px;background-color:#FAFAFA;padding-top:30px;">
+				<div class="text-center"><img src="images/SolutionIcons/Solution_Titel_Overview.png"></div>
+				<div class="introducePart">
+					<p style="text-indent: 2em;margin-bottom: 0;">汉熵通信基于无线专网、Adhoc自主网、无线Mesh、智慧杆等多模无线异构自组网的融合设计思路，实现定位救援一体化，是现代消防应急抢险的重要技术支撑。结合多模无线应急通信和传感球，实现救灾现场实时监测，增强对灾情的快速判断，以便提供针对性的救援措施，及时缓解灾情危害。</p>
+					<p style="text-indent: 2em;margin-bottom: 0;">基于虚拟现实和增强现实的技术，完善城区重点安防区域的建筑图纸数字化，创新性实现应急救援区域虚拟化支撑，提高救援效率。</p>
+					<p style="text-indent: 2em;margin-bottom: 0;">集约化的消防平台构建全勤指挥体系，在横向和纵向打通相关系统，实现信息实时共享，用信息化提高消防部队战斗力。</p>
+				</div>
+			</div>
+			<!--start-->
+	<div class="container" style="text-align: center;">
+	<div class="row">
+    <div class="col s12 m9 l10">
+    <ul class="collapsible" data-collapsible="expandable">
+    <li>
+      <div class="collapsible-header scrollspy active" id="PublicTransportNet">公共交通移动网络</div>
+      <div class="collapsible-body">
+      	<div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>广告公司，公交公司</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>公交公司需要业务扩展，提供乘客增值服务</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·ＷＩＦＩ路由器公交系统应用<br>·提供乘客无线上网，播放广告，公共信息发，<br>自动收费，行车记录车辆跟踪，车辆维护<br>·无线传输稳定，吞吐能力强，一个路由器可同时接入63个客户端<br>·高性能：小区边缘速率提高200%，无线空口时延改善60%</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线传感器，&nbsp;无线网关，&nbsp;北斗，&nbsp;蜂窝路由器，<br>高清摄像头，&nbsp;ＲＦＩＤ，&nbsp;管理软件。</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/WiFi in the public transportation.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/WiFi in the public transportation.jpg">
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="SpecialCar">特种车辆监控管理</div>
+      <div class="collapsible-body">
+      	<div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>公安，医疗，石油石化及运输公司</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>车辆丢失，货物丢失，行车不避让，司机不良驾驶。</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·北斗技术应用<br>·车载终端集成WIFI，ZIGBEE，卫星，视频及车辆总线<br>·实时监控车辆行走路线，精确定位<br>·主动维护，入侵检测，规范司机驾驶</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线传感器，&nbsp;无线网关，&nbsp;北斗，&nbsp;蜂窝路由器，<br>高清摄像头，&nbsp;ＲＦＩＤ，&nbsp;管理软件。</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/Special vehicles monitoring and management.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/Special vehicles monitoring and management.jpg">
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="SmartLight">智能信号灯控制系统</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>交警部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>信号变换需要人工干预或不实时。</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>··智能软件与信号机的应用<br>·根据车流量智能调整信号状态，是一个自适应的系统<br>·操作容易，维护简便，扩展性强，预留ITS接口</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线传感器，&nbsp;高清摄像头，&nbsp;无线路由器，&nbsp;<br>光纤收发器，&nbsp;路口机，&nbsp;管理软件。</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/Intelligent Signal Control System.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/Intelligent Signal Control System.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+     <li>
+      <div class="collapsible-header scrollspy active" id="TrafficEmergence">交通应急避让系统</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>交通管理部门，消防支队等</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>交通拥堵时段，很难保障或预留特种车辆（消防车等）的快速通道</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·通过对拥堵路段的自动监测，<br>利用和专属车联网或类似智慧交通平台的对接，<br>及时通知社会车辆提前避让。</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线地磁，&nbsp;无线路由器，&nbsp;汉熵云</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/Emergency -avoidance system.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/Emergency -avoidance system.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+     <li>
+      <div class="collapsible-header scrollspy active" id="SpeedCatch">超高速抓拍系统</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>交警部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>司机超速，违章变道。</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·激光雷达抓拍违章<br>·解决了原来的接触式安装线圈地磁破坏路面的问题，也解决了因为路面变线，<br>冰雪天气导致而设备的寿命和准确率<br>·雷达测速安装方便，使用寿命时间长，天气影响因素小，高速抓拍</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线传感器，&nbsp;高清摄像头，&nbsp;无线路由器，<br>交换机，&nbsp;管理平台</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/Intelligent Overspeed--Detecting & Snapping System.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/Intelligent Overspeed--Detecting & Snapping System.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="GeomagnetSense">地磁传感器</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>交通，市政</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>有线地磁施工成本高，周期长，维护难。</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>无线地磁技术应用<br>·代替传统的有线线圈，433M无线技术<br>·功耗，每天采集1万次，传感器可以用4年,<br>zigbee无线自组网状网技术，无需人工干预。<br>·安全，AES加密</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线地磁，&nbsp;工业高清摄像头，&nbsp;工业蜂窝路由器，<br>工业交换机,&nbsp;地磁传感器。</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/traffic/Geomagnetic sensor.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/traffic/Geomagnetic sensor.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+  </ul>
+  </div>
+   <div class="menuFix hide-on-small-only">
+   	<div class="jquery-accordion-menu white" style="width:100%;">
+     <ul class="section table-of-contents osolution" id="demo-list">
+        <li><a href="#PublicTransportNet" onclick="showActive('PublicTransportNet')">公共交通移动网络</a></li>
+        <li><a href="#SpecialCar" onclick="showActive('SpecialCar')">特种车辆监控管理</a></li>
+        <li><a href="#SmartLight">智能信号灯控制系统</a></li>
+        <li><a href="#TrafficEmergence">交通应急避让系统</a></li>
+        <li><a href="#SpeedCatch">超高速抓拍系统</a></li>
+        <li><a href="#GeomagnetSense">地磁传感器</a></li>
+      </ul>
+      </div>
+   </div>
+  </div>
+  </div>
+   <div class="show-on-small-only viewIcon" style="display:none" id="view" onclick="showView()">
+				<button class="material-scrolltop2 reveal" type="button"></button>
+				
+			</div>
+  <nav class="show-on-small-only" style="display:none">
+  <ul class="right hide-on-med-and-down">
+    <li><a href="#!" class="slideTitle">城市交通</a></li>
+    <li><a href="#!">公共交通移动网络</a></li>
+    <li><a href="#!">特种车辆监控管理</a></li>
+    <li><a href="#!">智能信号灯控制系统</a></li>
+    <li><a href="#!">交通应急避让系统</a></li>
+    <li><a href="#!">超高速抓拍系统</a></li>
+    <li><a href="#!">地磁传感器</a></li>
+  </ul>
+  <ul id="slide-out" class="side-nav" style="padding: 0px;">
+    <li><a href="#!" class="slideTitle">城市交通</a></li>
+    <li><a href="#!"  onclick="smallScroll('PublicTransportNet')">公共交通移动网络</a></li>
+    <li><a href="#!"  onclick="smallScroll('SpecialCar')">特种车辆监控管理</a></li>
+    <li><a href="#!"  onclick="smallScroll('SmartLight')">智能信号灯控制系统</a></li>
+    <li><a href="#!"  onclick="smallScroll('TrafficEmergence')">交通应急避让系统</a></li>
+    <li><a href="#!" onclick="smallScroll('SpeedCatch')">超高速抓拍系统</a></li>
+    <li><a href="#!"  onclick="smallScroll('GeomagnetSense')">地磁传感器</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+
+		</main>
+		<footer id="fh5co-footer">
+
+			<hr>
+			<div id="falv" class="text-center">
+				<h5>Made By @ China Entropy</h5>
+			</div>
+		</footer>
+
+		<button class="material-scrolltop" type="button"></button>
+
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Superfish -->
+		<script src="js/hoverIntent.js"></script>
+		<script src="js/superfish.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="js/nav.js" type="text/javascript"></script>
+		<script src="js/jquery-accordion-menu.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+			});
+			$(function() {
+				//顶部导航切换
+				$("#demo-list li").click(function() {
+					$("#demo-list li.active").removeClass("active");
+					$(this).addClass("active");
+				});
+			});
+
+			function PublicTransportNet() {
+				$("#productFrame").attr("src", "solution/CityTransport/PublicTransportNet.html");
+			}
+
+			function SpecialCar() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpecialCar.html");
+			}
+
+			function SmartLight() {
+				$("#productFrame").attr("src", "solution/CityTransport/SmartLight.html");
+			}
+
+			function TrafficEmergence() {
+				$("#productFrame").attr("src", "solution/CityTransport/TrafficEmergence.html");
+			}
+
+			function SpeedCatch() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpeedCatch.html");
+			}
+
+			function GeomagnetSense() {
+				$("#productFrame").attr("src", "solution/CityTransport/GeomagnetSense.html");
+			}
+		</script>
+		<script type="text/javascript">
+			(function($) {
+				$.expr[":"].Contains = function(a, i, m) {
+					return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+				};
+
+				function filterList(header, list) {
+					//@header 头部元素
+					//@list 无需列表
+					//创建一个搜素表单
+					var form = $("<form>").attr({
+							"class": "filterform",
+							action: "#"
+						}),
+						input = $("<input>").attr({
+							"class": "filterinput",
+							type: "text"
+						});
+					$(form).append(input).appendTo(header);
+					$(input).change(function() {
+						var filter = $(this).val();
+						if (filter) {
+							$matches = $(list).find("a:Contains(" + filter + ")").parent();
+							$("li", list).not($matches).slideUp();
+							$matches.slideDown();
+						} else {
+							$(list).find("li").slideDown();
+						}
+						return false;
+					}).keyup(function() {
+						$(this).change();
+					});
+				}
+				$(function() {
+					filterList($("#form"), $("#demo-list"));
+				});
+			})(jQuery);
+		</script>
+
+		<script src="src/material-scrolltop.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.parallax').parallax();
+				$('body').materialScrollTop({
+					revealElement: '#para1',
+					revealPosition: 'bottom',
+					onScrollEnd: function() {
+						console.log('Scrolling End');
+					}
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

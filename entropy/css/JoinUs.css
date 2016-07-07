@@ -1,0 +1,285 @@
+	#container1 {
+	max-width: 1700px;
+	margin: auto;
+	padding: 0px;
+}
+
+.row {
+	margin: auto !important;
+}
+
+.text-center span {
+	font-size: 22px !important;
+}
+
+.titleTop {
+	font-size: 28px;
+	color: "#515151";
+	padding-left: 15%;
+}
+@media only screen and (max-width: 768px) {
+	.titleTop {
+	font-size: 22px;
+	color: "#515151";
+	padding-left: 15%;
+}
+}
+body {
+	margin: 0px;
+	font-family: "微软雅黑" !important;
+}
+
+hr {
+	padding-left: 10%;
+	width: 80%;
+	border: 0px;
+	border-top: 3px solid #FAFAFA
+}
+
+footer hr {
+	padding-left: 0;
+	width: 100%;
+	border: 0px;
+	border-top: 1px solid #FAFAFA
+}
+
+.leftContent {
+	height: 150px;
+	padding: 30px 10% 0px 10%;
+}
+
+.rightContent {
+	height: 150px;
+	padding: 30px 10% 0px 10%;
+}
+
+.rightImg {
+	height: 260px;
+	z-index: 100;
+	margin-top: 40px;
+	width: 260px;
+}
+
+.leftImg {
+	height: 260px;
+	z-index: 100;
+	margin-top: 30px;
+	max-width: 260px;
+	width: 90%;
+	margin-left: 20%;
+}
+
+.whiteLine {
+	width: 100%;
+	height: 280px;
+}
+
+.grayLine {
+	width: 100%;
+	height: 280px;
+	background-color: #f8f8f8;
+}
+
+.whiteLine2 {
+	width: 100%;
+	height: 320px;
+}
+
+.grayLine2 {
+	width: 100%;
+	height: 280px;
+	background-color: #f8f8f8;
+}
+
+.lastPart {
+	height: auto;
+	overflow: hidden;
+	background-color: white;
+}
+
+.dividePart {
+	height: auto;
+	overflow: hidden;
+	margin-top: 35px;
+	margin-bottom: 60px;
+}
+
+.dividePart2 {
+	height: auto;
+	overflow: hidden;
+	margin-top: 35px;
+	text-align: left;
+	padding: 0px 10% 0px 10%;
+	margin-bottom: 60px;
+}
+
+.dividePart2 i {
+	color: #0099FE;
+}
+
+.smallPart {
+	color: #838383;
+	border-left: 6px solid #0099FF;
+	width: 80%;
+	margin-bottom: 70px;
+	margin-left: 10%;
+	padding-left: 10px;
+	
+}
+
+@media screen and (max-width: 768px) {
+	.smallPart {
+		color: #838383;
+		border-left: 6px solid #0099FF;
+		width: 80%;
+		margin-bottom: 30px;
+		margin-left:0;
+		font-size: 12px;
+	}
+}
+
+.smallPart h3 {
+	color: #0099FF;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+.img1 {
+	padding-left: 10%;
+	width: 100%;
+}
+
+@media screen and (max-width:980px) {
+	.img1 {
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+}
+
+.collapsible-header {
+	font-family: "微软雅黑" !important;
+	font-weight: 400;
+	font-size: 2em;
+}
+
+.collapsible {
+	width: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+}
+
+.menuFix {
+	position: absolute;
+	top: 600px;
+	left: 5%;
+	width: 15%;
+}
+
+@media screen and (max-width:1400px) {
+	.menuFix {
+		position: absolute;
+		top: 600px;
+		left: 0%;
+		width: 25%;
+	}
+	.slideTitle {
+		background-color: #459DF5;
+		color: white !important;
+		font-family: "微软雅黑" !important;
+		font-weight: bold;
+		font-size: 20px;
+		margin-top: 32px;
+	}
+	.slideSub {
+		background-color: #F8F8F8;
+		color: #3695F5;
+	}
+	.side-nav li a {
+		font-size: 16px;
+	}
+	.introducePart {
+		width: 100% !important;
+		color: #838383;
+		padding-top: 1em;
+		font-size: 14px;
+		padding-left: 10% !important;
+	}
+	hr {
+		width: 80%;
+		border: 0px;
+		border-top: 2px solid #FAFAFA;
+	}
+	@media only screen and (max-width: 600px) {
+		#container1 {
+			margin: 0px;
+			width: 100%;
+		}
+		.rightImg {
+			margin-left: 20%;
+			height: 300px;
+		}
+		.leftImg {
+			width: 350px;
+			margin-left: 20%;
+		}
+		@media screen and (min-width:1400px) {
+			#csx {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+		}
+		
+		.leftContent,
+		.rightContent {
+			height: auto;
+		}
+		.grayLine {
+			height: 600px;
+		}
+		.whiteLine {
+			height: 700px;
+		}
+		.grayLine2 {
+			height: 670px;
+		}
+		.whiteLine2 {
+			height: 770px;
+		}
+		.hide-on-small-only,
+		.tabs-wrapper,
+		.hide-on-small-and-down {
+			display: none !important;
+		}
+		.show-on-small-only {
+			display: inline !important;
+		}
+		.viewIcon {
+			position: fixed;
+			bottom: 7%;
+			right: 7%;
+			color: #57A6F6;
+			cursor: pointer;
+		}
+	}
+	@media only screen and (min-width: 601px) and (max-width: 910px) {
+		.leftContent,
+		.rightContent {
+			height: 350px;
+		}
+		.whiteLine,
+		.grayLine {
+			height: 400px;
+		}
+		.leftImg {
+			width: 90%;
+			margin-left: 15%;
+		}
+		.whiteLine2,
+		.grayLine2 {
+			height: 470px;
+		}
+	}
+	

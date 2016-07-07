@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>China Entropy </title>
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- jQuery -->
+		<script src="js/jquery-2.1.1.js"></script>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="apple-touch-icon-precomposed.png">
+
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Superfish -->
+		<link rel="stylesheet" href="css/superfish.css">
+
+		<link href="css/responsive.css" rel="stylesheet">
+		
+		<!-- Theme Style -->
+		<link href="css/menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/ST.css">
+		<link rel="stylesheet" type="text/css" href="src/material-scrolltop.css">
+		<link href="css/jquery-accordion-menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/hover-min.css">
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+			
+			body {
+				background: #FAFAFA;
+			}
+			
+			.content {
+				width: 260px;
+				margin: 100px auto;
+			}
+			
+			.filterinput {
+				background-color: rgba(249, 244, 244, 0);
+				border-radius: 15px;
+				width: 90%;
+				height: 30px;
+				border: thin solid #FFF;
+				text-indent: 0.5em;
+				font-weight: bold;
+				color: #FFF;
+			}
+			
+			#demo-list a {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 100%;
+			}
+			
+			.table-of-contents a.active {
+				border-bottom: none !important;
+				z-index: 5;
+				background: #fff !important;
+				color: #0099ff;
+				border-left: 6px solid #0099ff;
+				border-bottom: none !important;
+				-webkit-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-moz-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-ms-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-o-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+			}
+		</style>
+		<script>
+			jQuery(document).ready(function() {
+				jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+
+			});
+
+			$(function() {
+				//滚动监听
+				$('.scrollspy').scrollSpy();
+				//顶部导航切换
+				$("#demo-list li").click(function() {
+					$("#demo-list li.active").removeClass("active");
+					$(this).addClass("active");
+				});
+				$('.button-collapse').sideNav({
+					menuWidth: 300, // Default is 240
+					edge: 'right', // Choose the horizontal origin
+					closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+				});
+				window.onscroll = function() {
+					var t = document.documentElement.scrollTop || document.body.scrollTop;
+					if (t >= 300) {
+						$('.menuFix').css({
+							"position": "fixed",
+							"top": "250px"
+						});
+					} else {
+						$('.menuFix').css({
+							"position": "absolute",
+							"top": "600px"
+						});
+					}
+				}
+			});
+
+			function showView() {
+				$('.button-collapse').sideNav('show');
+			}
+
+			function showActive(PartName) {
+				//$("#"+PartName).parent().addClass('active');
+				//$("#"+PartName).click();
+			}
+
+			function smallScroll(PartName) {
+				$(".side-nav li a").removeClass('slideSub');
+				if (PartName == 'DigitalOil') {
+					$(".side-nav li a:eq(1)").addClass('slideSub');
+				} else if (PartName == 'StoreTransport') {
+					$(".side-nav li a:eq(2)").addClass('slideSub');
+				} else if (PartName == 'PipeInspect') {
+					$(".side-nav li a:eq(3)").addClass('slideSub');
+				} else if (PartName == 'SmartOil') {
+					$(".side-nav li a:eq(4)").addClass('slideSub');
+				}
+
+				var scroll_offset = $("#" + PartName).offset(); //得到pos这个div层的offset，包含两个值，top和left
+				$("body,html").animate({
+					scrollTop: scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+				}, 0);
+			}
+		</script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+			<script src="js/modernizr-2.6.2.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<!-- START #fh5co-header -->
+
+		<header id="fh5co-header-section" role="header" class="service-header">
+			<div class="container">
+
+				<!-- START #fh5co-logo -->
+				<h1 id="fh5co-logo" class="pull-left header-logo"><div><img id="Home-logo" src="images/logo.png"/></div></h1>
+
+				<!-- START #fh5co-menu-wrap -->
+				<nav id="fh5co-menu-wrap" role="navigation">
+					<ul class="sf-menu" id="fh5co-primary-menu">
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						<li class="active">
+							<a href="#" class="fh5co-sub-ddown">方案</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html" class="fh5co-sub-ddown">冬奥会</a>
+									<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html">环保冬奥</a></li>
+								<li><a href="OlySafetyTest.html">安全冬奥</a></li>
+								<li><a href="OlyTechTest.html">科技冬奥</a></li>
+								<li><a href="OlyTravelTest.html">畅通冬奥</a></li>
+								</ul>
+								</li>
+								<li><a href="CityTest.html">城市交通</a></li>
+								<li><a href="RoadTest.html">高速公路</a></li>
+								<li><a href="OilTest.html">智慧油田</a></li>
+								<li><a href="RelicTest.html">文物保护</a></li>
+								<li><a href="FireTest.html">智慧消防</a></li>
+								<li><a href="PowerTest.html">能源互联网</a></li>
+							</ul>
+						</li>
+						<li><a href="ProductTest.html">产品</a></li>
+						<li><a href="service.html">服务</a></li>
+						<li>
+							<a href="company.html" class="fh5co-sub-ddown">公司</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="company.html">公司简介</a></li>
+								<li><a href="NewFounder.html">创始人寄语</a></li>
+								<li><a href="NewMission.html">使命与愿景</a></li>
+								<li><a href="NewContactUs.html">联系我们</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<main>
+			<div style="position: absolute;width:100%;top: 200px;z-index: 500px;">
+				<div class="container">
+					<div class="row">
+						<span style="color: #FFF; font-size: 40px;font-weight: 600;">智慧油田</span>
+						<h3 style="color: #fff;font-weight: 600;">——信息科技，增效开源！<br><br></h3>
+						<h4 style="width:400px;color:#fff;text-shadow: 2px 2px 5px #000;">汉熵通信先进的多模无线融合技术贯穿于整个油井监控、数据采集、管道检测、原油储运等整个采油流程，先进信息科技为智慧油田增效开源！</h4>
+
+					</div>
+				</div>
+			</div>
+			<div class="parallax-container">
+				<div class="parallax"><img src="images/Banners/Banner_Oil_Luis.jpg"></div>
+			</div>
+			<div id="top2">
+				<div class="container">
+					<h6 id="welcome1" class="pull-left"><a>欢迎来到汉熵通信</a></h6>
+					<ul class="sf-menu pull-right" id="fh5co-primary-menu2">
+						<li><a href="join_us_social.html" style="color: #fff;font-size: 12px;">加入我们</a>
+						</li>
+						<li id="englishVersion"><a href="#" style="color: #fff;font-size: 12px;">English</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- End the top bar -->
+			<div id="para1" style="width:88%;height:auto !important;height:300px;background-color:#FAFAFA;padding-top:30px;">
+				<div class="text-center"><img src="images/SolutionIcons/Solution_Titel_Overview.png"></div>
+				<div class="introducePart">
+					<p style="text-indent: 2em;margin-bottom: 0;">汉熵通信的先进多模无线的融合专网技术贯穿于油井监控、数据采集、管道监测、原油储运等整个采油流程，先进信息科技为智慧油田增效开源！</p>
+					<p style="text-indent: 2em;margin-bottom: 0;">汉熵通信面向油田行业提供多模无线的融合专网技术，以及油田云和大数据平台，实现端到端可追踪，可管理，可调度，可维护，可开放的整体解决方案。</p>
+					<p style="text-indent: 2em;margin-bottom: 0;">“汉熵油田云和大数据平台”运用高并发、大容量设计思想，结合油田各环节的能量流与信息流数据进行大数据分析，实现准实时电力需求预测，构建面向油田行业的弹性云计算和大数据平台；助力能源互联网在油田落地，挖掘油田数据价值；并面向关联系统及其他产业链实现可控的能力开放。</p>
+				</div>
+			</div>
+			<!--start-->
+			<div class="container" style="text-align: center;">
+				<div class="row">
+					<div class="col s12 m9 l10">
+						<ul class="collapsible" data-collapsible="expandable">
+							<li>
+								<div class="collapsible-header scrollspy active" id="DigitalOil">数字油田</div>
+								<div class="collapsible-body">
+									<div class="lastPart">
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+												<div class="colTitle">客户</div><br>
+												<h6>油田</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+												<div class="colTitle">问题&nbsp;</div><br>
+												<h6>抽油机（油、气、水）的远程数据采集，<br>需要解决多种终端在复杂场景下的通信问题</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+												<div class="colTitle">方案</div><br>
+												<h6>·针对数字油田所需的复杂通信需求，汉熵提供了<br>&nbsp;融合的多模无线专网方案，实现温度，<br>&nbsp;压力，载荷，位移，电流，电压，液面，流量，<br>&nbsp;含水量等不同监测和控制业务承载的物联专网</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+												<div class="colTitle">产品&nbsp;</div><br>
+												<h6>融合物联通信系统、&nbsp;无钥加密系统</h6>
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/oil/Digital Oilfield.jpg">
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/photo_Sybil_20160520/oil/Digital Oilfield.jpg">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header scrollspy active" id="StoreTransport">油田储运</div>
+								<div class="collapsible-body">
+									<div class="lastPart">
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+												<div class="colTitle">客户</div><br>
+												<h6>油田</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+												<div class="colTitle">问题&nbsp;</div><br>
+												<h6>油田储运和仓储需要有效监控和协调<br>是行业多年未解决的难点</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+												<div class="colTitle">方案</div><br>
+												<h6>·汉熵通信基于车联网以及现代物联网技术，<br>&nbsp;实现多场景下的油田储运监控。<br>·RFID 标签与 WIFI, ZIGBEE 蜂窝组合，<br>&nbsp;实时统计与管理产品状态。<br>·RFID，ZigBee，GPS，北斗，蜂窝技术的组合，<br>&nbsp;保证车辆的正常行驶路线，纠正司机的驾驶<br>&nbsp;不良行为，全程跟踪车辆的轨迹。<br>&nbsp;事故率比较以前降低30%。丢失率降低了100%。</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+												<div class="colTitle">产品&nbsp;</div><br>
+												<h6>融合物联通信系统,&nbsp;车联网</h6>
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/oil/Oilfields’ Storage and Transportation.jpg">
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/photo_Sybil_20160520/oil/Oilfields’ Storage and Transportation.jpg">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header scrollspy active" id="PipeInspect">管道监测</div>
+								<div class="collapsible-body">
+									<div class="lastPart">
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+												<div class="colTitle">客户</div><br>
+												<h6>油田</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+												<div class="colTitle">问题&nbsp;</div><br>
+												<h6>管道的实时监测一直是油田管理的难点</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+												<div class="colTitle">方案</div><br>
+												<h6>·汉熵提供低功耗，大覆盖的无线专网方案，<br>&nbsp;结合户外型低功耗终端，<br>&nbsp;解决油田管道实时监测的瓶颈</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+												<div class="colTitle">产品&nbsp;</div><br>
+												<h6>融合物联通信系统、&nbsp;无钥加密系统</h6>
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/oil/Pipeline Monitoring.jpg">
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/photo_Sybil_20160520/oil/Pipeline Monitoring.jpg">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header scrollspy active" id="SmartOil">智慧油田</div>
+								<div class="collapsible-body">
+									<div class="lastPart">
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+												<div class="colTitle">客户</div><br>
+												<h6>油田</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart1">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+												<div class="colTitle">问题&nbsp;</div><br>
+												<h6>从数字油田演进到智慧油田，<br>对油田行业提出了较高的技术要求</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+												<div class="colTitle">方案</div><br>
+												<h6>汉熵基于领先的物联网技术，<br>&nbsp;视频监控技术以及大数据分析技术，<br>&nbsp;携手行业伙伴，通过智能化的建模，<br>&nbsp;解决了数字油田至智慧油田演进的技术瓶颈<br>·智能电子巡井，基于巡检终端的电子巡井<br>&nbsp;（传感数据的直接查询与盘点）<br>·井场安全管理、资产管理、车辆管理<br>·视频监控、闯入预警</h6>
+											</div>
+										</div>
+										<div class="col s12 m6 l6">
+											<div class="colPart2">
+												<img class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+												<div class="colTitle">产品&nbsp;</div><br>
+												<h6>融合型物联通信系统,&nbsp;智慧视频监控系统<br>油田云和大数据平台,&nbsp;无钥加密系统</h6>
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/oil/Smart Oilfield.jpg">
+											</div>
+										</div>
+										<div class="col s12 m12 l12">
+											<div class="colPart3">
+												<div class="colTitle2">
+													<font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;
+													<font color="gainsboro">————</font>
+												</div>
+												<img class="colImg2" src="images/photo_Sybil_20160520/oil/Smart Oilfield.jpg">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="menuFix hide-on-small-only">
+						<div class="jquery-accordion-menu white" style="width:100%;">
+							<ul class="section table-of-contents osolution" id="demo-list">
+								<li><a href="#DigitalOil" onclick="showActive('RapidSingle')">数字油田</a></li>
+								<li><a href="#StoreTransport" onclick="showActive('ManageChange')">油田储运</a></li>
+								<li><a href="#PipeInspect">管道监测</a></li>
+								<li><a href="#SmartOil">智慧油田</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="show-on-small-only viewIcon" style="display:none" id="view" onclick="showView()">
+				<button class="material-scrolltop2 reveal" type="button"></button>
+				
+			</div>
+			<nav class="show-on-small-only" style="display:none">
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#!" class="slideTitle">智慧油田</a></li>
+					<li><a href="#!" onclick="smallScroll('DigitalOil')">数字油田</a></li>
+					<li><a href="#!" onclick="smallScroll('StoreTransport')">油田储运</a></li>
+					<li><a href="#!" onclick="smallScroll('PipeInspect')">管道监测</a></li>
+					<li><a href="#!" onclick="smallScroll('SmartOil')">智慧油田</a></li>
+				</ul>
+				<ul id="slide-out" class="side-nav" style="padding: 0px;">
+					<li><a href="#!" class="slideTitle">智慧油田</a></li>
+					<li><a href="#!" onclick="smallScroll('DigitalOil')">数字油田</a></li>
+					<li><a href="#!" onclick="smallScroll('StoreTransport')">油田储运</a></li>
+					<li><a href="#!" onclick="smallScroll('PipeInspect')">管道监测</a></li>
+					<li><a href="#!" onclick="smallScroll('SmartOil')">智慧油田</a></li>
+				</ul>
+				<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+			</nav>
+
+		</main>
+		<footer id="fh5co-footer">
+
+			<hr>
+			<div id="falv" class="text-center">
+				<h5>Made By @ China Entropy</h5>
+			</div>
+		</footer>
+
+		<button class="material-scrolltop" type="button"></button>
+
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Superfish -->
+		<script src="js/hoverIntent.js"></script>
+		<script src="js/superfish.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="js/nav.js" type="text/javascript"></script>
+		<script src="js/jquery-accordion-menu.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+			});
+			$(function() {
+				//顶部导航切换
+				$("#demo-list li").click(function() {
+					$("#demo-list li.active").removeClass("active");
+					$(this).addClass("active");
+				});
+			});
+
+			function PublicTransportNet() {
+				$("#productFrame").attr("src", "solution/CityTransport/PublicTransportNet.html");
+			}
+
+			function SpecialCar() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpecialCar.html");
+			}
+
+			function SmartLight() {
+				$("#productFrame").attr("src", "solution/CityTransport/SmartLight.html");
+			}
+
+			function TrafficEmergence() {
+				$("#productFrame").attr("src", "solution/CityTransport/TrafficEmergence.html");
+			}
+
+			function SpeedCatch() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpeedCatch.html");
+			}
+
+			function GeomagnetSense() {
+				$("#productFrame").attr("src", "solution/CityTransport/GeomagnetSense.html");
+			}
+		</script>
+		<script type="text/javascript">
+			(function($) {
+				$.expr[":"].Contains = function(a, i, m) {
+					return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+				};
+
+				function filterList(header, list) {
+					//@header 头部元素
+					//@list 无需列表
+					//创建一个搜素表单
+					var form = $("<form>").attr({
+							"class": "filterform",
+							action: "#"
+						}),
+						input = $("<input>").attr({
+							"class": "filterinput",
+							type: "text"
+						});
+					$(form).append(input).appendTo(header);
+					$(input).change(function() {
+						var filter = $(this).val();
+						if (filter) {
+							$matches = $(list).find("a:Contains(" + filter + ")").parent();
+							$("li", list).not($matches).slideUp();
+							$matches.slideDown();
+						} else {
+							$(list).find("li").slideDown();
+						}
+						return false;
+					}).keyup(function() {
+						$(this).change();
+					});
+				}
+				$(function() {
+					filterList($("#form"), $("#demo-list"));
+				});
+			})(jQuery);
+		</script>
+
+		<script src="src/material-scrolltop.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.parallax').parallax();
+				$('body').materialScrollTop({
+					revealElement: '#para1',
+					revealPosition: 'bottom',
+					onScrollEnd: function() {
+						console.log('Scrolling End');
+					}
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

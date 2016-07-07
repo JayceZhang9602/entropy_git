@@ -1,0 +1,66 @@
+body{
+	margin: 0px;
+	font-family: "微软雅黑" !important;
+}
+hr{
+	padding-left:10%;width:80%;border:0px;border-top:3px solid #FAFAFA
+}
+.container1{
+	max-width: 1700px;
+	margin: auto;
+}
+.text-center span{
+	font-size: 22px !important;
+}
+.titleTop{
+	font-size:28px;
+	color:"#515151";
+	padding-left: 15%;
+}
+.whiteLine{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	font-size: 20px;
+}
+.whiteLine2{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	font-size: 20px;
+}
+.leftImg{
+	margin-top: 30px;
+}
+.rightContent{
+	padding: 30px 10% 0px 3%;
+}
+.colorLine{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	margin-top: 60px;
+	font-size: 20px;
+	background: url('../images/CompanyImage/Founder_bg2_Luis.png');
+	background-size:cover;
+	
+}
+.colorLine .leftContent{
+	padding: 30px 10% 0px 3%;
+}
+.colorLine .rightImg{
+	margin-top: 30px;
+}
+@media only screen and (min-width: 601px) and (max-width: 910px){
+.colorLine .rightImg{
+	margin-left: 10px !important;
+}
+}
+@media only screen and (max-width: 600px){
+.leftImg{
+	margin-left: 30% !important;
+}
+.rightImg{
+	margin-left: 20% !important;
+}
+}

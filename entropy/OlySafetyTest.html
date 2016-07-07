@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>China Entropy </title>
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- jQuery -->
+		<script src="js/jquery-2.1.1.js"></script>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="apple-touch-icon-precomposed.png">
+
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Superfish -->
+		<link rel="stylesheet" href="css/superfish.css">
+
+		<link href="css/responsive.css" rel="stylesheet">
+		<!--cancel
+		<link rel="stylesheet" type="text/css" href="src/material-scrolltop.css">--!>
+		<!-- Theme Style -->
+		<link href="css/menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/ST.css">	
+		<link rel="stylesheet" type="text/css" href="src/material-scrolltop.css">
+		<link href="css/jquery-accordion-menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/hover-min.css">
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+			
+			body {
+				background: #FAFAFA;
+			}
+			
+			.content {
+				width: 260px;
+				margin: 100px auto;
+			}
+			
+			.filterinput {
+				background-color: rgba(249, 244, 244, 0);
+				border-radius: 15px;
+				width: 90%;
+				height: 30px;
+				border: thin solid #FFF;
+				text-indent: 0.5em;
+				font-weight: bold;
+				color: #FFF;
+			}
+			
+			#demo-list a {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 100%;
+			}
+			.table-of-contents a.active {
+				border-bottom: none !important;
+				z-index: 5;
+				background: #fff !important;
+				color: #0099ff;
+				border-left: 6px solid #0099ff;
+				border-bottom: none !important;
+				-webkit-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-moz-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-ms-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-o-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+			}
+			@media screen and (min-width:1400px ) {
+				.olytitle {
+					margin-right: 5%;
+				}
+			}
+			@media screen and (min-width:980px ) {
+				.olytitle {
+					float: right;
+					width: 76%;
+				}
+			}
+			@media screen and (max-width:980px ) {
+				.olytitle {
+					float: inherit;
+					width:100%;
+				}
+			}
+			.solia a{
+				height: 50px !important;
+				padding-top: 20px !important;
+				padding-bottom: 20px !important;
+				margin-bottom: 2px !important;
+				border-bottom: none !important;
+				z-index: 5;
+				background: #fff !important;
+				color: #555;
+				border-left: 6px solid #0099ff;
+				border-bottom: none !important;
+				-webkit-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-moz-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-ms-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				-o-box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+				box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.125);
+			}
+			.solib a {
+				color: #0099FF;
+			} 
+		
+		</style>
+		<script>
+		 jQuery(document).ready(function () {
+		jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+	
+		});
+
+		$(function(){	
+		//滚动监听
+		$('.scrollspy').scrollSpy();
+			//顶部导航切换
+		$("#demo-list li").click(function(){
+		$("#demo-list li.active").removeClass("active");
+		$(this).addClass("active");
+		});
+		$('.button-collapse').sideNav({
+     	menuWidth: 300, // Default is 240
+      	edge: 'right', // Choose the horizontal origin
+      	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   		});
+   		window.onscroll = function(){ 
+   		var t = document.documentElement.scrollTop || document.body.scrollTop;  
+	    if( t >= 450 ) { 
+	       $('.menuFix').css({"position":"fixed","top":"160px"});
+	    } else { 
+	        $('.menuFix').css({"position":"absolute","top":"600px"});
+	    }} 
+		});
+	  function showView(){
+	  	$('.button-collapse').sideNav('show');
+	  }
+	  function showActive(PartName){
+	  	//$("#"+PartName).parent().addClass('active');
+	  	//$("#"+PartName).click();
+	  }
+	  function smallScroll(PartName){
+	  	$(".side-nav li a").removeClass('slideSub');
+	  	if(PartName=='Fire3D'){
+	  		$(".side-nav li a:eq(1)").addClass('slideSub');
+	  	}else if(PartName=='CaseResponse'){
+	  		$(".side-nav li a:eq(2)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='InOutdoor'){
+	  		$(".side-nav li a:eq(3)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='FlowStatic'){
+	  		$(".side-nav li a:eq(4)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='TouristLost'){
+	  		$(".side-nav li a:eq(5)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='HiddenPeople'){
+	  		$(".side-nav li a:eq(6)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='DangerPeople'){
+	  		$(".side-nav li a:eq(7)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='SafetyPriority'){
+	  		$(".side-nav li a:eq(8)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='AtheleteGoods'){
+	  		$(".side-nav li a:eq(9)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='FoodResource'){
+	  		$(".side-nav li a:eq(10)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='HandID'){
+	  		$(".side-nav li a:eq(11)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='GeoDisaster'){
+	  		$(".side-nav li a:eq(12)").addClass('slideSub');
+	  	}
+	  	else if(PartName=='Radar'){
+	  		$(".side-nav li a:eq(13)").addClass('slideSub');
+	  	}
+	  	var scroll_offset = $("#"+PartName).offset();  //得到pos这个div层的offset，包含两个值，top和left
+ 		 $("body,html").animate({
+   		scrollTop:scroll_offset.top  //让body的scrollTop等于pos的top，就实现了滚动
+  		},0);
+		}
+	</script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+			<script src="js/modernizr-2.6.2.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<!-- START #fh5co-header -->
+
+		<header id="fh5co-header-section" role="header" class="service-header">
+			<div class="container">
+
+				<!-- START #fh5co-logo -->
+				<h1 id="fh5co-logo" class="pull-left header-logo"><div><img id="Home-logo" src="images/logo.png"/></div></h1>
+
+				<!-- START #fh5co-menu-wrap -->
+				<nav id="fh5co-menu-wrap" role="navigation">
+					<ul class="sf-menu" id="fh5co-primary-menu">
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						<li class="active">
+							<a href="#" class="fh5co-sub-ddown">方案</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html" class="fh5co-sub-ddown">冬奥会</a>
+									<ul class="fh5co-sub-menu">
+								<li><a href="OlyGreenTest.html">环保冬奥</a></li>
+								<li><a href="OlySafetyTest.html">安全冬奥</a></li>
+								<li><a href="OlyTechTest.html">科技冬奥</a></li>
+								<li><a href="OlyTravelTest.html">畅通冬奥</a></li>
+								</ul>
+								</li>
+								<li><a href="CityTest.html">城市交通</a></li>
+								<li><a href="RoadTest.html">高速公路</a></li>
+								<li><a href="OilTest.html">智慧油田</a></li>
+								<li><a href="RelicTest.html">文物保护</a></li>
+								<li><a href="FireTest.html">智慧消防</a></li>
+								<li><a href="PowerTest.html">能源互联网</a></li>
+							</ul>
+						</li>
+						<li><a href="ProductTest.html">产品</a></li>
+						<li><a href="service.html">服务</a></li>
+						<li>
+							<a href="company.html" class="fh5co-sub-ddown">公司</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="company.html">公司简介</a></li>
+								<li><a href="NewFounder.html">创始人寄语</a></li>
+								<li><a href="NewMission.html">使命与愿景</a></li>
+								<li><a href="NewContactUs.html">联系我们</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<main>
+			<div style="position: absolute;width:100%;top: 200px;z-index: 500px;">
+				<div class="container">
+					<div class="row">
+						<span style="color: #FFF; font-size: 40px;font-weight: 600;">安全冬奥</span>
+						<h3 style="color: #fff;font-weight: 600;">——“精彩、非凡、卓越！”<br><br></h3>
+						<h4 style="width:400px;color:#fff;text-shadow: 2px 2px 5px #000;">汉熵通信凭借自身科技优势让冬奥会更安全、更环保、更智能、更畅通，为把2022年冬奥会办成一届“精彩、非凡、卓越”的奥运盛会贡献力量。</h4>
+
+					</div>
+				</div>
+			</div>
+			<div class="parallax-container">
+				<div class="parallax"><img src="images/Banners/Banner_WO_Luis.jpg"></div>
+			</div>
+			<div id="top2">
+				<div class="container">
+					<h6 id="welcome1" class="pull-left"><a>欢迎来到汉熵通信</a></h6>
+					<ul class="sf-menu pull-right" id="fh5co-primary-menu2">
+						<li><a href="join_us_social.html" style="color: #fff;font-size: 12px;">加入我们</a>
+						</li>
+						<li id="englishVersion"><a href="#" style="color: #fff;font-size: 12px;">English</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- End the top bar -->
+			<div id="para1" class="olytitle" style="height:auto !important;height:300px;background-color:#FAFAFA;padding-top:30px;">
+				<div class="text-center"><img src="images/SolutionIcons/Solution_Titel_Overview.png"></div>
+				<div class="introducePart">
+					<p style="text-indent: 2em;margin-bottom: 0;"> 基于本届冬奥会的三大理念：“以运动员为中心、可持续发展、节俭办赛”，汉熵的整体方案体现以下考虑：</p><p style="text-indent: 2em;margin-bottom: 0;">1. 以运动员为中心，充分考虑运动员在奥运会期间的综合需求，依托前沿的物联网和融合无线通信技术，打造全方位的覆盖场馆及相关区域的物联网络，无缝衔接并满足运动员的信息采集，信息管理，信息互动的需求；</p><p style="text-indent: 2em;margin-bottom: 0;">2. 以冬奥会管理为锚点，基于云计算和大数据技术，多维度分析来自物联网络以及其他应用系统的信息流，达到以运动员为中心的信息无阻塞反馈，并通过物联网络实现实时互动；</p><p style="text-indent: 2em;margin-bottom: 0;">3. 基于统一的信息平台面向其他相关系统和互联网实现能力和数据开放，从而将互联网的线上能力与线下物联网络有机结合，实现”以人为本，良性互动“的友好体验；</p><p style="text-indent: 2em;margin-bottom: 0;">4. 围绕运动员打造的以上系统未来可沿用于面向游客和居民的需求，持续发展，充分保护投资，作为未来京张实现智慧景区/智慧城市的基础。</p></div>
+			</div>
+			</div>
+			<!--start-->
+				<div class="row">
+					 <div class="menuFix hide-on-small-only">
+   	<div class="jquery-accordion-menu white" style="width:100%;">
+      <ul class="section table-of-contents osolution" id="demo-list">
+      	<li class="solia"><a href="OlyGreenTest.html">环保冬奥</a></li>
+      	<li class="solia"><a href="OlyTechTest.html">科技冬奥</a></li>
+      	<li class="solia"><a href="OlyTravelTest.html">畅通冬奥</a></li>
+      	<li class="solia solib"><a href="OlySafetyTest.html">安全冬奥</a></li>
+        <li><a href="#Fire3D" onclick="showActive('Fire3D')">火灾告警的3D呈现</a></li>
+        <li><a href="#CaseResponse" onclick="showActive('CaseResponse')">应急响应</a></li>
+        <li><a href="#InOutdoor">奥运场馆或户外设施监控</a></li>
+        <li><a href="#FlowStatic">人流统计</a></li>
+        <li><a href="#TouristLost">游客防走失</a></li>
+        <li><a href="#HiddenPeople">车内隐藏人员识别</a></li>
+        <li><a href="#DangerPeople">危险人员识别</a></li>
+        <li><a href="#SafetyPriority">安检优先通过</a></li>
+        <li><a href="#AtheleteGoods">运动员物品管理</a></li>
+        <li><a href="#FoodResource">食品溯源</a></li>
+        <li><a href="#HandID">身份识别手持终端</a></li>
+        <li><a href="#GeoDisaster">地质灾害报警</a></li>
+        <li><a href="#Radar">雷达电子围栏</a></li>
+      </ul>
+      </div>
+   </div>
+	<div id="csx" class="col s12 m9 l9" style="float: right;">
+	<div class="container" style="width:100%;text-align: center;">
+    <ul class="collapsible" data-collapsible="expandable">
+    <li>
+      <div class="collapsible-header scrollspy active" id="Fire3D">火灾告警的3D呈现</div>
+      <div class="collapsible-body">
+      	<div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>消防</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>当发生火灾后，对起火的具体位置，<br>消防队员及人民群众所处的位置不了解</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·无线定位技术会实时呈现消防队员的行动轨迹，<br>&nbsp;先进的传感器时时刻刻采集火灾现场人体电磁波<br>&nbsp;及燃点位置,指挥中心根据现场反馈<br>&nbsp;制定应急方案，快速施展营救措施</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线传感器&nbsp;消防跟踪器&nbsp;3D软件</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/3D render of fire alarm.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/3D render of fire alarm.jpg">
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="CaseResponse">应急响应</div>
+      <div class="collapsible-body">
+      	<div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>安全部门及体育管理部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>赛事发生变化，比赛队员及观众需要第一时间获知，<br>运动场馆及公共场所出现恐怖份子及爆炸物威胁的时候，<br>要在特殊范围内的相关人员及时通知</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·汉熵引入大于10MW大规模储能方案和供气供暖结合<br>&nbsp;缓解原有储能的负荷，同时电制氢储能<br>&nbsp;将过剩电力制氢供应企业和居用用户，<br>&nbsp;降低弃风率，提高风能利用率；<br>&nbsp;同时通过移动式储能电网，<br>&nbsp;实现对奥运区域的应急供电保障</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>电制氢储能方案、&nbsp;储能监控和运营平台、<br>智慧能量网关、&nbsp;移动式储能电站</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Emergency response.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Emergency response.jpg">
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="InOutdoor">奥运场馆或户外设施监控</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>体育，市政</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>和部分运营商网络无法覆盖的盲点需要监控</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·汉熵专网可以连接监控探头，无线传感 等感知设备，<br>&nbsp;采集到数据进行分析，分类发布给各个应用平台<br>&nbsp;各部门联动响应，承担相应的工作</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>汉熵专网、&nbsp;无线传感器、<br>摄像头、&nbsp;无线控制器&nbsp;汉熵云平台</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/The Olympic venues (monitoring) and outdoor facilities monitoring.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/The Olympic venues (monitoring) and outdoor facilities monitoring.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+     <li>
+      <div class="collapsible-header scrollspy active" id="FlowStatic">人流统计</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>政府安全部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>精彩的体育赛事会导致观众密集到一个有限的区域，<br>导致交通拥堵，踩踏事故，也可能会管理失控</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·奥运卡组合监控设备及应急发布平台,<br>&nbsp;及时控制人流方向快速疏导，有效通知给观众</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>汉熵专网&nbsp;奥运卡&nbsp;无线摄像&nbsp;无线基站</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Spectator flow statistics.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Spectator flow statistics.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+     <li>
+      <div class="collapsible-header scrollspy active" id="TouristLost">游客防走失</div>
+      <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>观众，冬奥会管委会</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>游客走失管理</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·游客的防走失手环，通过汉熵无线专网提供监控管理。</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>汉熵无线专网,&nbsp;防走失手环</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Anti Lost Wristband.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Anti Lost Wristband.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="HiddenPeople">车内隐藏人员识别 </div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>负责国家安全的部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>犯罪分子及恐怖份子利用交通工具掩护，<br>藏匿企图进入奥运区域</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·汉熵非接触检测仪，利用人体的电磁波的特征，<br>&nbsp;通过无线的方式辨别出车辆内人数是否相符。</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线检测仪,&nbsp;识别软件系统</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Hiding Recognition.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Hiding Recognition.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+      <li>
+      <div class="collapsible-header scrollspy active" id="DangerPeople">危险人员识别</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>负责国家安全的部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>犯罪分子及犯罪嫌疑人逃避责任</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·电子门票与身份信息绑定<br>·结合人脸识别<br>·高清远景，近景摄像机，录像机抓拍相机，LED补光；<br>&nbsp;通过光纤，交换机，无线路由器等<br>&nbsp;通信技术把数据送到数据中心<br>·后台软件进行处理分类，客户根据<br>&nbsp;需要呈现车辆车牌，颜色，车型；<br>·定位犯罪分子位置，跟踪犯罪分子的轨迹</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>高清摄像头,&nbsp;无线路由器&nbsp;交换机<br>无线基站、&nbsp;应用软件</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Identification of dangerous personnels.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Identification of dangerous personnels.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+     <li>
+      <div class="collapsible-header scrollspy active" id="SafetyPriority">安检优先通过</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>负责国家安全的部门</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>运动员专车，救护车，消防车，警车<br>需要优先于社会车辆通行</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·奥运速通卡内置RFID,激光雷达<br>&nbsp;可以远距离识别出特种车量，<br>&nbsp;配合高清摄像头准确识别车牌的技术，<br>&nbsp;采集数据给智慧中心，广播区域车辆配合让行</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>速通卡&nbsp;汉熵广播专网&nbsp;高清摄像头&nbsp;汉熵平台</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Priority pass through the security checks.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Priority pass through the security checks.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="AtheleteGoods">运动员物品管理</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>运动员</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>运动员物品遗失或被盗，影响比赛结果</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·当被管的设备超过管理设定的区域<br>&nbsp;防失器会立刻自动预警，<br>&nbsp;也会监控遗失，被盗设备运动轨迹，<br>&nbsp;定位最后一次出现位置</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>智能防失器,&nbsp;汉熵云平台</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Athletes’ goods management.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Athletes’ goods management.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="FoodResource">食品溯源</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>所有奥运参与者及政府</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>运动员由于药检的限制，对食品要求非常严格，<br>一定要掌握食品的来源，及快速检测食品健康</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·RFID技术保证食品的来源准确<br>&nbsp;简易食品分析仪器快速检测食品的含有化学药品的计量<br>&nbsp;发送到卫生数据中心，提供指导意见</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>RFID,&nbsp;冷链系统,&nbsp;食品分析仪</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Food Traceability.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Food Traceability.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="HandID">身份识别手持终端</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>公安</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>原来的身份证识别距离近，单一扫描</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·手持器可以同时采集超过100个奥运卡，<br>&nbsp;配合固定扫描器，减少人流质押，工作效率低的问题<br>&nbsp;高级的安全加密算法防止手持设备丢失，<br>&nbsp;被盗导致信息泄露</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>手持终端+安全加密算法</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Hand-held Terminal for IR.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Hand-held Terminal for IR.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="GeoDisaster">地质灾害报警</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>市政及高速</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>路面塌陷，路桥地基沉降，信号塔<br>及电力输线塔的沉降监测</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·在监控的区域布设无线传感器和摄像器材，<br>&nbsp;监测该区域的变化，联动摄像抓拍，传到数据中心，<br>&nbsp;调度相关部门及时处理障碍</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>无线摄像头,&nbsp;无线传感器,&nbsp;处理软件</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Early-warning for geology disasters.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Early-warning for geology disasters.jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header scrollspy active" id="Radar">雷达电子围栏</div>
+       <div class="collapsible-body"><div class="lastPart">
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ClientIcon_Luis.png">
+      				<div class="colTitle">客户</div><br>
+      				<h6>政府安全部门及奥运安保</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart1">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProblemIcon_Luis.png">
+      				<div class="colTitle">问题&nbsp;</div><br>
+      				<h6>敏感物品及文物的丢失造成巨大的损失</h6>
+      			</div></div>
+      			<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_SolutionIcon_Luis.png">
+      				<div class="colTitle">方案</div><br>
+      				<h6>·激光雷达设备的应用，设置电子围栏。<br>&nbsp;一旦入侵会联动告警设备，机关。<br>&nbsp;快速制止犯罪分子不法行为。</h6>
+      			</div></div>
+      		<div class="col s12 m6 l6">
+      			<div class="colPart2">
+      				<img  class="colImg" src="images/SolutionIcons/Solution_ProductIcon_Luis.png">
+      				<div class="colTitle">产品&nbsp;</div><br>
+      				<h6>激光扫描雷达,&nbsp;摄像头,&nbsp;报警器</h6>
+      			</div></div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>技术线图&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/Thetechnicalchart_Sybil_20160520/Olymimages/safe/Radar electronic fence.jpg">
+      			</div>
+      		</div>
+      		<div class="col s12 m12 l12">
+      			<div class="colPart3">
+      				<div class="colTitle2"><font color="gainsboro">————&nbsp;&nbsp;</font>应用场景&nbsp;&nbsp;<font color="gainsboro">————</font></div>
+      				<img class="colImg2" src="images/photo_Sybil_20160520/Olympic/safe/Radar electronic fence .jpg">
+      			</div>
+      		</div>
+      	</div></div>
+    </li>
+  </ul>
+  </div>
+  
+  </div>
+  </div>
+  <div class="show-on-small-only viewIcon" style="display:none" id="view" onclick="showView()">
+				<button class="material-scrolltop2 reveal" type="button"></button>
+				
+			</div>
+  <nav class="show-on-small-only" style="display:none">
+  <ul class="right hide-on-med-and-down">
+    <li><a href="#!" class="slideTitle">安全冬奥</a></li>
+   <li><a href="#!"  onclick="smallScroll('Fire3D')">火灾告警的3D呈现</a></li>
+    <li><a href="#!"  onclick="smallScroll('CaseResponse')">应急响应</a></li>
+    <li><a href="#!"  onclick="smallScroll('InOutdoor')">奥运场馆或户外设施监控</a></li>
+    <li><a href="#!"  onclick="smallScroll('FlowStatic')">人流统计</a></li>
+    <li><a href="#!" onclick="smallScroll('TouristLost')">游客防走失</a></li>
+    <li><a href="#!"  onclick="smallScroll('HiddenPeople')">车内隐藏人员识别</a></li>
+    <li><a href="#!"  onclick="smallScroll('DangerPeople')">危险人员识别</a></li>
+    <li><a href="#!"  onclick="smallScroll('SafetyPriority')">安检优先通过</a></li>
+    <li><a href="#!"  onclick="smallScroll('AtheleteGoods')">运动员物品管理</a></li>
+    <li><a href="#!" onclick="smallScroll('FoodResource')">食品溯源</a></li>
+    <li><a href="#!"  onclick="smallScroll('HandID')">身份识别手持终端</a></li>
+    <li><a href="#!"  onclick="smallScroll('GeoDisaster')">地质灾害报警</a></li>
+    <li><a href="#!"  onclick="smallScroll('Radar')">雷达电子围栏</a></li>
+    <li><a href="#!"  onclick="smallScroll('none')">none</a></li>
+  </ul>
+  <ul id="slide-out" class="side-nav" style="padding: 0px;">
+       <li><a href="#!" class="slideTitle">安全冬奥</a></li>
+   <li><a href="#!"  onclick="smallScroll('Fire3D')">火灾告警的3D呈现</a></li>
+    <li><a href="#!"  onclick="smallScroll('CaseResponse')">应急响应</a></li>
+    <li><a href="#!"  onclick="smallScroll('InOutdoor')">奥运场馆或户外设施监控</a></li>
+    <li><a href="#!"  onclick="smallScroll('FlowStatic')">人流统计</a></li>
+    <li><a href="#!" onclick="smallScroll('TouristLost')">游客防走失</a></li>
+    <li><a href="#!"  onclick="smallScroll('HiddenPeople')">车内隐藏人员识别</a></li>
+    <li><a href="#!"  onclick="smallScroll('DangerPeople')">危险人员识别</a></li>
+    <li><a href="#!"  onclick="smallScroll('SafetyPriority')">安检优先通过</a></li>
+    <li><a href="#!"  onclick="smallScroll('AtheleteGoods')">运动员物品管理</a></li>
+    <li><a href="#!" onclick="smallScroll('FoodResource')">食品溯源</a></li>
+    <li><a href="#!"  onclick="smallScroll('HandID')">身份识别手持终端</a></li>
+    <li><a href="#!"  onclick="smallScroll('GeoDisaster')">地质灾害报警</a></li>
+    <li><a href="#!"  onclick="smallScroll('Radar')">雷达电子围栏</a></li>
+    <li><a href="#!"  onclick="smallScroll('none')">none</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+
+		</main>
+		<footer id="fh5co-footer">
+
+			<hr>
+			<div id="falv" class="text-center">
+				<h5>Made By @ China Entropy</h5>
+			</div>
+		</footer>
+
+		<button class="material-scrolltop" type="button"></button>
+
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Superfish -->
+		<script src="js/hoverIntent.js"></script>
+		<script src="js/superfish.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="js/nav.js" type="text/javascript"></script>
+		<script src="js/jquery-accordion-menu.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+			});
+			$(function() {
+				//顶部导航切换
+				$("#demo-list li").click(function() {
+					$("#demo-list li.active").removeClass("active");
+					$(this).addClass("active");
+				});
+			});
+
+			function PublicTransportNet() {
+				$("#productFrame").attr("src", "solution/CityTransport/PublicTransportNet.html");
+			}
+
+			function SpecialCar() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpecialCar.html");
+			}
+
+			function SmartLight() {
+				$("#productFrame").attr("src", "solution/CityTransport/SmartLight.html");
+			}
+
+			function TrafficEmergence() {
+				$("#productFrame").attr("src", "solution/CityTransport/TrafficEmergence.html");
+			}
+
+			function SpeedCatch() {
+				$("#productFrame").attr("src", "solution/CityTransport/SpeedCatch.html");
+			}
+
+			function GeomagnetSense() {
+				$("#productFrame").attr("src", "solution/CityTransport/GeomagnetSense.html");
+			}
+		</script>
+		<script type="text/javascript">
+			(function($) {
+				$.expr[":"].Contains = function(a, i, m) {
+					return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+				};
+
+				function filterList(header, list) {
+					//@header 头部元素
+					//@list 无需列表
+					//创建一个搜素表单
+					var form = $("<form>").attr({
+							"class": "filterform",
+							action: "#"
+						}),
+						input = $("<input>").attr({
+							"class": "filterinput",
+							type: "text"
+						});
+					$(form).append(input).appendTo(header);
+					$(input).change(function() {
+						var filter = $(this).val();
+						if (filter) {
+							$matches = $(list).find("a:Contains(" + filter + ")").parent();
+							$("li", list).not($matches).slideUp();
+							$matches.slideDown();
+						} else {
+							$(list).find("li").slideDown();
+						}
+						return false;
+					}).keyup(function() {
+						$(this).change();
+					});
+				}
+				$(function() {
+					filterList($("#form"), $("#demo-list"));
+				});
+			})(jQuery);
+		</script>
+
+		<script src="src/material-scrolltop.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.parallax').parallax();
+				$('body').materialScrollTop({
+					revealElement: '#para1',
+					revealPosition: 'bottom',
+					onScrollEnd: function() {
+						console.log('Scrolling End');
+					}
+				});
+			});
+		</script>
+
+	</body>
+
+</html>
